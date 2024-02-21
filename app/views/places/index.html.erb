@@ -1,0 +1,17 @@
+<h1>Places I've Been</h1>
+
+<ul>
+  <% if @places.nil? %>
+    <li>No places found</li>
+  <% else %>
+    <% @places.each do |place| %>
+      <li>
+        <a href="/places/<%= place.id %>">
+          <%= place.name %>
+        </a>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= link_to "New Place", new_place_path %>
